@@ -15,8 +15,9 @@ body {
 #my-canvas {
   border: black 2px solid;
   width: 400px;
-  height: 90vh;
+  height: 500px;
   margin-right: 50px;
+  margin-left: calc(50vw - 300px);
 }
 
 .tetris__title {
@@ -24,12 +25,17 @@ body {
 }
 .tetris .container {
   display: flex;
+  flex-direction: column;
 }
-.tetris__data__container dt, .tetris__data__container dd {
+.tetris__data .tetris__score, .tetris__data .tetris__lines, .tetris__data .tetris__level {
   display: inline;
+}
+.tetris__data .tetris__container {
+  margin-bottom: 1rem;
 }
 .tetris__play {
   border: 1px black solid;
   padding: 1rem 2rem;
   background-color: aquamarine;
+  cursor: pointer;
 }
