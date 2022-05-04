@@ -18,8 +18,8 @@ export class Canvas {
     }
 
     resizeCanvas() {
-        this.canvasElt.width = window.innerWidth;
-        this.canvasElt.height = window.innerHeight;
+        this.canvasElt.width = window.innerWidth / 5;
+        this.canvasElt.height = window.innerHeight * 0.7;
     }
 
 }

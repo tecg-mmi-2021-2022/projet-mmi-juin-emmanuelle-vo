@@ -3,3 +3,27 @@
   padding: 0;
   overflow: hidden;
 }
+html {
+  font-size: 18px;
+}
+
+.my-canvas {
+  border: black 2px solid;
+}
+
+.tetris__play {
+  border: 1px black solid;
+  padding: 1rem 2rem;
+  background-color: aquamarine;
+}
+
+.tetris {
+  &__title {
+    font-size: 3rem;
+  }
+  &__data {
+    &__container {
+
+    }
+  }
+}

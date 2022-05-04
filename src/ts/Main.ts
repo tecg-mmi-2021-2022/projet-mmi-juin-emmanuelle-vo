@@ -5,7 +5,6 @@ class Main {
 
     constructor() {
         this.canvas = new Canvas();
-        console.log('test')
     }
 }
 

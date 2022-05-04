@@ -1,5 +1,9 @@
 # Tetris
 
+## Jeu
+
+[Lien](https://hepl-mmi-2021-2022.github.io/projet-mmi-juin-emmanuelle-vo/)
+
 ## Description
 
 > Tetris a été conçu par Alekseï Pajitnov en 1984 sur Elektronika 60.
@@ -75,3 +79,6 @@ Il a été principalement exploité par Nintendo jusqu'en 1996 où la société 
 - [ ] Start
 - [ ] Playing
 - [ ] Game Over
+
+- Son
+- [ ] Ajouter un son lorsqu'une ligne est complétée
