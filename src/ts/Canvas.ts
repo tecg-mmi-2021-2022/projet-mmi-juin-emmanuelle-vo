@@ -8,13 +8,16 @@ export class Canvas {
         this.resizeCanvas();
         this.addEventListeners();
 
-        return this
     }
 
     addEventListeners() {
         window.addEventListener('resize', () => {
             this.resizeCanvas();
         });
+
+        document.querySelector('.tetris__play').addEventListener('click', (e) => {
+            console.log('play')
+        })
     }
 
     resizeCanvas() {
