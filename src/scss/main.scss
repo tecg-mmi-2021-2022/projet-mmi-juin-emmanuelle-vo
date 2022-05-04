@@ -7,23 +7,35 @@ html {
   font-size: 18px;
 }
 
-.my-canvas {
-  border: black 2px solid;
+body {
+  display: flex;
 }
 
-.tetris__play {
-  border: 1px black solid;
-  padding: 1rem 2rem;
-  background-color: aquamarine;
+#my-canvas {
+  border: black 2px solid;
+  width: 400px;
+  height: 90vh;
+  margin-right: 50px;
 }
+
 
 .tetris {
   &__title {
     font-size: 3rem;
   }
+  .container {
+    display: flex;
+  }
   &__data {
     &__container {
-
+      dt, dd {
+        display: inline;
+      }
     }
+  }
+  &__play {
+    border: 1px black solid;
+    padding: 1rem 2rem;
+    background-color: aquamarine;
   }
 }
