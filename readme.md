@@ -35,14 +35,43 @@ Il a été principalement exploité par Nintendo jusqu'en 1996 où la société 
   - A chaque 10 lignes complétées :
     - Le niveau augmente de 1
     - La vitesse de chute augmente
-    - Le score du joueur augmente (multiplicateur)
+    - Le score du joueur augmente
 
-### Règles supplémentaires
+## TODO List
 
-- Rajouter une touche qui fait descendre d’un coup une pièce
-  - Ce qui rajoute du bonus au score (bonus qui dépend de la distance entre la pièce et le bas)
-- Pour les experts, pouvoir commencer à un niveau désiré (donc une vitesse désirée)
-- Lorsque 4 lignes sont complétées d’un coup(=tetris), ajouter un multiplicateur de score pour un nombre de temps
-  - Si le multiplicateur tetris n’est pas encore terminé et que le joueur en fait un autre, le temps s’accumule ainsi que le multiplicateur
-- Afficher le nombre de « tetris » que le joueur a fait en tout (encore bonus score?)
-- Pouvoir mettre le jeu en pause (3 fois seulement)
+- Créer un background statique
+- [ ] Créer un bouton start
+- [ ] Créer un score, level, et le nombre de lignes complétées
+- [ ] Créer un champ de jeu
+
+- [ ] Créer une interface 
+- [ ] Créer une classe parent pour un carré
+
+- Créer un tétromino (statique)
+- [ ] Pièce carrée
+- [ ] Pièce L
+- [ ] Pièce L à l'envers
+- [ ] Pièce T
+- [ ] Pièce z
+- [ ] Pièce z à l'envers
+- [ ] Pièce I
+
+- Détecter les collisions
+- [ ] Pièce et champ de jeu
+- [ ] Pièce et pièce
+
+- GameController
+- [ ] Pouvoir se déplacer gauche-droite
+- [ ] Pouvoir se déplacer vers le bas avec une vitesse plus grande
+- [ ] Pouvoir faire une rotation
+- 
+- Lignes complétées
+- [ ] Quand une ligne est complétée, elle disparait, et les blocs placés au-dessus chutent d'un rang
+- [ ] Quand une ligne est complétée, le score du joueur augmente
+- [ ] Après x lignes, le niveau augmente et la vitesse aussi et le score aussi
+
+
+- Game State
+- [ ] Start
+- [ ] Playing
+- [ ] Game Over
