@@ -8,7 +8,6 @@ export class Tetromino extends Shape implements IDrawable {
     private shape: number[][];
 
 
-
     constructor(ctx: CanvasRenderingContext2D) {
         super(ctx);
         this.id = Math.floor(Math.random() * tetrominoShapes.length)
@@ -18,10 +17,9 @@ export class Tetromino extends Shape implements IDrawable {
         this.position = {x: settings.tetrominos.position.x, y: settings.tetrominos.position.y}
     }
 
-    override draw(){
+    override draw() {
         this.ctx.beginPath()
         this.ctx.fillStyle = this.color
-        // si > 0 : dessiner le carré
         this.shape.forEach((row, y) => {
             row.forEach((value, x) => {
                 if (value > 0) {
@@ -32,52 +30,70 @@ export class Tetromino extends Shape implements IDrawable {
         this.ctx.closePath()
     }
 
-    override animate(){
-        this.position.y += 1
+    override animate() {
+        //this.fall()
 
         this.draw()
         this.checkCollision()
     }
 
+    fall() {
+        if (this.position.y + this.shape.length >= settings.canvas.rows) {
+            this.position.y += 0
+        } else {
+            this.position.y += 1
+        }
+    }
+
     override moveLeft() {
-        this.position.x -= 1
+        if (this.position.x > 0) {
+            this.position.x -= 1
+        }
         this.draw()
     }
+
     override moveRight() {
-        this.position.x += 1
+        for (let i = 0; i < this.shape.length; i++) {
+            if (this.position.x + this.shape[i].length < settings.canvas.columns) {
+                this.position.x += 1
+                return false
+            }
+        }
         this.draw()
     }
+
     override moveDown() {
-        this.position.y += 1
+        for (let i = 0; i < this.shape.length; i++) {
+            if (this.position.y + this.shape.length < settings.canvas.rows) {
+                this.position.y += 1
+                return false
+            }
+        }
         this.draw()
     }
+
     override rotate() {
-        //TODO
+        for (let i = 0; i < this.shape.length; i++) {
+            console.log(this.shape[i].length)
+        }
+
+
+
+        /*for (let y = 0; y < this.shape.length; y++) {
+            for (let x = 0; x < y; ++x) {
+                [this.shape[x][y], this.shape[y][x]] =
+                    [this.shape[y][x], this.shape[x][y]];
+            }
+        }
+        this.shape.forEach((row: any[]) => row.reverse());*/
+
 
 
         this.draw()
     }
 
-    override checkCollision(){
+    override checkCollision() {
 
 
     }
 }
-
-/*
-isInsideWalls(x, y) {
-  return  (
-    x >= 0 &&   // Left wall
-    x < COLS && // Right wall
-    y < ROWS // Floor
-  )
-}
-valid(p) {
-  return p.shape.every((row, dy) => {
-    return row.every((value, dx) =>
-      value === 0 ||
-      this.isInsideWalls(p.x + dx, p.y + dy)
-    );
-  });
-}
- */

@@ -1,12 +1,5 @@
 import {IDrawable} from "./Interfaces/IDrawable";
-import {TetrominoSquare} from "./Drawables/Tetrominos/TetrominoSquare";
 import {settings} from "./settings";
-import {TetrominoI} from "./Drawables/Tetrominos/TetrominoI";
-import {TetrominoL} from "./Drawables/Tetrominos/TetrominoL";
-import {TetrominoInverseL} from "./Drawables/Tetrominos/TetrominoInverseL";
-import {TetrominoT} from "./Drawables/Tetrominos/TetrominoT";
-import {TetrominoZ} from "./Drawables/Tetrominos/TetrominoZ";
-import {TetrominoInverseZ} from "./Drawables/Tetrominos/TetrominoInverseZ";
 import {Board} from "./Drawables/Board";
 import tetrominoShapes from "./tetrominoShapes";
 import {Tetromino} from "./Drawables/Tetromino";
@@ -24,7 +17,7 @@ export class Canvas {
         this.ctx.canvas.height = settings.canvas.rows * settings.square.size
         this.ctx.scale(settings.square.size, settings.square.size)
         this.board = new Board(this.ctx)
-        console.table(this.board.getEmptyBoard())
+        //console.table(this.board.getEmptyBoard())
 
         this.addEventListeners();
 

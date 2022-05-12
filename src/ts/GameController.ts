@@ -1,6 +1,4 @@
 import {Animation} from "./Animation";
-import {TetrominoL} from "./Drawables/Tetrominos/TetrominoL";
-import {IDrawable} from "./Interfaces/IDrawable";
 import {Tetromino} from "./Drawables/Tetromino";
 
 export class GameController {
@@ -20,21 +18,20 @@ export class GameController {
     addEventListeners() {
         window.addEventListener('keydown', (e: KeyboardEvent) => {
             if (e.key === 'ArrowRight') {
-                    this.tetromino.moveRight()
+                this.tetromino.moveRight()
             }
             if (e.key === 'ArrowLeft') {
-                    this.tetromino.moveLeft()
+                this.tetromino.moveLeft()
             }
             if (e.key === 'ArrowDown') {
-                    this.tetromino.moveDown()
+                this.tetromino.moveDown()
             }
             if (e.key === 'ArrowUp') {
 
-                    this.tetromino.rotate()
+                this.tetromino.rotate()
             }
         })
     }
-
 
 
 }
