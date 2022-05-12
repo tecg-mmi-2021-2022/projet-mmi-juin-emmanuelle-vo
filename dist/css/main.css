@@ -14,8 +14,6 @@ body {
 
 #my-canvas {
   border: black 2px solid;
-  width: 400px;
-  height: 500px;
   margin-right: 50px;
   margin-left: calc(50vw - 300px);
 }

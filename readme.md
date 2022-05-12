@@ -43,29 +43,24 @@ Il a été principalement exploité par Nintendo jusqu'en 1996 où la société 
 
 ## TODO List
 
-- Créer un background statique
-- [ ] Créer un bouton start
-- [ ] Créer un score, level, et le nombre de lignes complétées
-- [ ] Créer un champ de jeu
+- [ x ] Créer un background statique
+- [ x ] Créer un bouton start
+- [ x ] Créer un score, level, et le nombre de lignes complétées
+- [ x ] Créer un champ de jeu
+- [ x ] Créer une grille
 
-- [ ] Créer une interface 
-- [ ] Créer une classe parent pour un carré
+- [ x ] Créer une interface 
+- [ x ] Créer une classe parent
 
 - Créer un tétromino (statique)
-- [ ] Pièce carrée
-- [ ] Pièce L
-- [ ] Pièce L à l'envers
-- [ ] Pièce T
-- [ ] Pièce z
-- [ ] Pièce z à l'envers
-- [ ] Pièce I
+- [ x ] Pièce aléatoirement
 
 - Détecter les collisions
 - [ ] Pièce et champ de jeu
 - [ ] Pièce et pièce
 
 - GameController
-- [ ] Pouvoir se déplacer gauche-droite
+- [ x ] Pouvoir se déplacer gauche-droite
 - [ ] Pouvoir se déplacer vers le bas avec une vitesse plus grande
 - [ ] Pouvoir faire une rotation
 - 
@@ -82,3 +77,6 @@ Il a été principalement exploité par Nintendo jusqu'en 1996 où la société 
 
 - Son
 - [ ] Ajouter un son lorsqu'une ligne est complétée
+
+
+Tutoriel(s) que j'ai suivi : 

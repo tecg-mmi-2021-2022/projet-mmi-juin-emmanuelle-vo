@@ -1,20 +1,20 @@
 import {IDrawable} from "../../Interfaces/IDrawable";
-import {Shape} from "../Shape";
+import {_Shape} from "../_Shape";
 import {settings} from "../../settings";
 
-export class TetrominoI extends Shape implements IDrawable {
+export class TetrominoI extends _Shape implements IDrawable {
     private width: number;
     public position: {x: number, y:number}
 
 
     constructor(color: string, ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) {
         super(color, ctx, canvas)
-        this.width = settings.square.width
+        this.width = settings.square.size
         this.position = { x: this.canvas.width / 2 - this.width / 2, y: 0 }
     }
 
 
-    /*override draw() {
+    override draw() {
         this.ctx.beginPath()
         this.ctx.lineWidth = 2
         this.ctx.strokeStyle = 'black'
@@ -38,5 +38,20 @@ export class TetrominoI extends Shape implements IDrawable {
         this.ctx.fillStyle = this.color
         this.ctx.fillRect(this.position.x, this.position.y + this.width*3, this.width, this.width)
         this.ctx.closePath()
-    }*/
+    }
+
+    override animate() {
+        this.position.y += this.speed.y
+
+        this.checkCollision()
+        this.draw()
+    }
+
+    override checkCollision() {
+        if(this.position.y + this.width*4 >= this.canvas.height) {
+            this.speed.y = 0
+            this.over = true
+        }
+
+    }
 }

@@ -7,24 +7,28 @@ import {TetrominoInverseL} from "./Drawables/Tetrominos/TetrominoInverseL";
 import {TetrominoT} from "./Drawables/Tetrominos/TetrominoT";
 import {TetrominoZ} from "./Drawables/Tetrominos/TetrominoZ";
 import {TetrominoInverseZ} from "./Drawables/Tetrominos/TetrominoInverseZ";
+import {Board} from "./Drawables/Board";
+import tetrominoShapes from "./tetrominoShapes";
+import {Tetromino} from "./Drawables/Tetromino";
 
 export class Canvas {
     private canvasElt: HTMLCanvasElement
-    private ctx: CanvasRenderingContext2D
+    public ctx: CanvasRenderingContext2D
     public shapes: IDrawable[] = [];
+    public board: Board;
 
     constructor() {
         this.canvasElt = document.getElementById('my-canvas') as HTMLCanvasElement
         this.ctx = this.canvasElt.getContext('2d')
+        this.ctx.canvas.width = settings.canvas.columns * settings.square.size
+        this.ctx.canvas.height = settings.canvas.rows * settings.square.size
+        this.ctx.scale(settings.square.size, settings.square.size)
+        this.board = new Board(this.ctx)
+        console.table(this.board.getEmptyBoard())
+
         this.addEventListeners();
 
-        this.shapes.push(new TetrominoSquare(settings.tetrominos.square.color, this.ctx, this.canvasElt));
-        this.shapes.push(new TetrominoI(settings.tetrominos.i.color, this.ctx, this.canvasElt));
-        this.shapes.push(new TetrominoL(settings.tetrominos.l.color, this.ctx, this.canvasElt));
-        this.shapes.push(new TetrominoInverseL(settings.tetrominos.lInverse.color, this.ctx, this.canvasElt));
-        //this.shapes.push(new TetrominoT(settings.tetrominos.t.color, this.ctx, this.canvasElt));
-        //this.shapes.push(new TetrominoZ(settings.tetrominos.z.color, this.ctx, this.canvasElt));
-        this.shapes.push(new TetrominoInverseZ(settings.tetrominos.zInverse.color, this.ctx, this.canvasElt));
+        this.board.tetromino
 
         this.draw()
 
@@ -32,14 +36,16 @@ export class Canvas {
 
     addEventListeners() {
         document.querySelector('.tetris__play').addEventListener('click', (e) => {
-            console.log('play')
+            this.board.reset()
         })
     }
 
     draw() {
-        this.shapes.forEach(shape => {
-            shape.draw();
-        })
+        this.board.tetromino.draw()
+    }
+
+    animate() {
+        this.board.tetromino.animate()
     }
 
 

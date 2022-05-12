@@ -1,32 +1,40 @@
 import {Animation} from "./Animation";
+import {TetrominoL} from "./Drawables/Tetrominos/TetrominoL";
+import {IDrawable} from "./Interfaces/IDrawable";
+import {Tetromino} from "./Drawables/Tetromino";
 
 export class GameController {
     private isStart: boolean;
     private animation: Animation;
     private playText: HTMLParagraphElement;
+    private tetromino: Tetromino;
 
-    constructor(animation: Animation) {
+    constructor(animation: Animation, tetromino: Tetromino) {
         this.isStart = false;
         this.animation = animation;
         this.playText = document.querySelector('.tetris__play');
+        this.tetromino = tetromino
         this.addEventListeners()
     }
 
     addEventListeners() {
         window.addEventListener('keydown', (e: KeyboardEvent) => {
-            if (this.isStart && e.key === 'ArrowRight') {
+            if (e.key === 'ArrowRight') {
+                    this.tetromino.moveRight()
             }
-            if (this.isStart && e.key === 'ArrowLeft') {
+            if (e.key === 'ArrowLeft') {
+                    this.tetromino.moveLeft()
             }
-            if (this.isStart && e.key === 'ArrowDown') {
+            if (e.key === 'ArrowDown') {
+                    this.tetromino.moveDown()
             }
-        });
+            if (e.key === 'ArrowUp') {
+
+                    this.tetromino.rotate()
+            }
+        })
     }
 
 
-    start() {
-        this.playText.classList.add('hide');
-        this.isStart = true;
-    }
 
 }

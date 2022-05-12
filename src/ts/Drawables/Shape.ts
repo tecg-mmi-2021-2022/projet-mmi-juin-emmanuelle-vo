@@ -1,20 +1,28 @@
 import {IDrawable} from "../Interfaces/IDrawable";
 
-export abstract class Shape implements IDrawable {
+export abstract class Shape implements IDrawable{
     protected readonly ctx: CanvasRenderingContext2D;
-    protected canvas: HTMLCanvasElement;
+    protected id: number;
     protected color: string;
-    public position: {x: number, y: number};
-    protected speed: number;
+    protected position: {x: number, y: number}
 
-
-    protected constructor(color: string, ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) {
-        this.color = color;
+    protected constructor(ctx: CanvasRenderingContext2D) {
         this.ctx = ctx;
-        this.canvas = canvas;
     }
 
-    draw() {}
+    draw(){}
+
+    animate(){}
+
+    moveLeft(){}
+
+    moveRight(){}
+
+    moveDown(){}
+
+    rotate(){}
+
+    checkCollision(){}
 
 
 }
