@@ -6,7 +6,7 @@ export const settings = {
     scoreWorth: 10,
     initialScore: 0,
     initialLines: 0,
-    initialLevel: 0,
+    initialLevel: 1,
     level: 1000,
 
     shapes: [

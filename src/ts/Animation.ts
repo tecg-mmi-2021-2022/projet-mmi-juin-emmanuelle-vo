@@ -13,7 +13,7 @@ export class Animation {
     constructor(canvas: Canvas, isStart: boolean) {
         this.canvas = canvas
         this.isStart = isStart
-        this.startAnimating(1)
+        this.startAnimating(this.canvas.levels)
 
     }
 
@@ -33,7 +33,7 @@ export class Animation {
         this.elapsed = this.now - this.then;
 
         if (this.elapsed > this.fpsInterval) {
-            console.log(this.isStart)
+            this.fpsInterval = 1000 / this.canvas.levels
             this.then = this.now - (this.elapsed % this.fpsInterval);
 
             this.canvas.ctx.clearRect(0, 0, this.canvas.canvasElt.width, this.canvas.canvasElt.height)

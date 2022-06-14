@@ -9,7 +9,7 @@ export class Canvas {
     private score: number;
     private playButton: HTMLAnchorElement;
     private lines: number;
-    private levels: number;
+    public levels: number;
     private id: number;
     private scoreElt: HTMLElement;
     private levelElt: HTMLElement;
