@@ -16,6 +16,7 @@ export class Canvas {
     private linesElt: HTMLElement;
     private isStart: boolean;
     private playAgainText: HTMLParagraphElement;
+    private clearSound: HTMLAudioElement;
 
     constructor(isStart: boolean) {
         this.isStart = isStart
@@ -30,7 +31,7 @@ export class Canvas {
         this.score = settings.initialScore
         this.lines = settings.initialLines
         this.levels = settings.initialLevel
-
+        this.clearSound = new Audio('../resources/audio/clear.wav');
         this.board = new Board(this.ctx)
 
         this.startGame()
@@ -51,10 +52,10 @@ export class Canvas {
     }
 
     newGameState() {
-
         this.validLine()
+        console.log('ok')
         if (this.board.fallingPiece === null) {
-            this.id = Math.floor(Math.random() * settings.shapes.length)
+            this.id = Math.floor(Math.random() * 6) + 1
             console.log(this.id)
             const newPiece = new Piece(this.ctx, settings.shapes[this.id])
             this.board.fallingPiece = newPiece
@@ -76,6 +77,7 @@ export class Canvas {
 
         for (let i = 0; i < this.board.grid.length; i++) {
             if (allFilled(this.board.grid[i])) {
+                this.clearSound.play();
                 this.score = this.score += settings.scoreWorth
                 this.lines = this.lines += 1
                 this.board.grid.splice(i, 1)

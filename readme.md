@@ -66,12 +66,12 @@ Il a été principalement exploité par Nintendo jusqu'en 1996 où la société 
 
 
 - Game State
-- [ x ] Start
-- [ x ] Playing
-- [ x ] Game Over
+- [  ] Start
+- [  ] Playing
+- [  ] Game Over
 
 - Son
-- [ ] Ajouter un son lorsqu'une ligne est complétée
+- [ x ] Ajouter un son lorsqu'une ligne est complétée
 
 
 Tutoriel(s) que j'ai suivi : 
