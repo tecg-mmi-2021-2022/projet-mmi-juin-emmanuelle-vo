@@ -3,7 +3,7 @@ import {Board} from "./Board";
 import {Piece} from "./Drawables/Piece";
 
 export class Canvas {
-    private canvasElt: HTMLCanvasElement
+    public canvasElt: HTMLCanvasElement
     public ctx: CanvasRenderingContext2D
     public board: Board;
     private score: number;
@@ -14,12 +14,12 @@ export class Canvas {
     private scoreElt: HTMLElement;
     private levelElt: HTMLElement;
     private linesElt: HTMLElement;
-    private isStart: boolean;
+    public isStart: boolean;
     private playAgainText: HTMLParagraphElement;
     private clearSound: HTMLAudioElement;
 
-    constructor(isStart: boolean) {
-        this.isStart = isStart
+    constructor() {
+        this.isStart = false
         this.canvasElt = document.getElementById('my-canvas') as HTMLCanvasElement
         this.ctx = this.canvasElt.getContext('2d')
         this.playButton = document.querySelector('.tetris__play') as HTMLAnchorElement
@@ -41,22 +41,20 @@ export class Canvas {
     startGame() {
         this.playButton.addEventListener('click', (e) => {
             e.preventDefault()
-            if (this.isStart === false) {
+            /*if (this.isStart === false) {
                 setInterval(() => {
                     this.newGameState()
                 }, settings.gameClock)
+            }*/
+            this.isStart =true
 
-            }
-            this.isStart === true
         })
     }
 
     newGameState() {
         this.validLine()
-        console.log('ok')
         if (this.board.fallingPiece === null) {
             this.id = Math.floor(Math.random() * 6) + 1
-            console.log(this.id)
             const newPiece = new Piece(this.ctx, settings.shapes[this.id])
             this.board.fallingPiece = newPiece
             this.board.moveDown()
@@ -81,7 +79,7 @@ export class Canvas {
                 this.score = this.score += settings.scoreWorth
                 this.lines = this.lines += 1
                 this.board.grid.splice(i, 1)
-                this.board.grid.unshift([0,0,0,0,0,0,0,0,0,0])
+                this.board.grid.unshift([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
 
                 if (this.score % 50 === 0) {
                     this.levels = this.levels += 1

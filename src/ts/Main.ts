@@ -1,15 +1,17 @@
 import {GameController} from "./GameController";
 import {Canvas} from "./Canvas";
+import {Animation} from "./Animation";
 
 class Main {
-    public isStart: boolean;
     private canvas: Canvas;
     private controller: GameController;
+    private animation: Animation;
 
     constructor() {
-        this.isStart = false;
-        this.canvas = new Canvas(this.isStart)
+        this.canvas = new Canvas()
+        this.animation = new Animation(this.canvas, this.canvas.isStart)
         this.controller = new GameController(this.canvas.board)
     }
 }
+
 new Main()
