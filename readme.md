@@ -31,15 +31,10 @@ Il a été principalement exploité par Nintendo jusqu'en 1996 où la société 
 - Si une pièce dépasse le haut du champ de jeu, la partie se termine
 - Quand une ligne est complétée, elle disparait, et les blocs placés au-dessus chutent d'un rang
 - Quand une ligne est complétée, le score du joueur augmente
-    - Une ligne : +10
-    - 2 lignes : +20
-    - 3 lignes : +30
-    - 4 lignes : +40
 - Au fur et à mesure que le joueur complète des lignes, son niveau augmente ainsi que la vitesse de chute des pièces
-  - A chaque 10 lignes complétées :
+  - A chaque 4 lignes complétées :
     - Le niveau augmente de 1
     - La vitesse de chute augmente
-    - Le score du joueur augmente
 
 ## TODO List
 
@@ -52,31 +47,34 @@ Il a été principalement exploité par Nintendo jusqu'en 1996 où la société 
 - [ x ] Créer une interface 
 - [ x ] Créer une classe parent
 
-- Créer un tétromino (statique)
+- [ x ] Créer un tétromino (statique)
 - [ x ] Pièce aléatoirement
 
-- Détecter les collisions
-- [ ] Pièce et champ de jeu
-- [ ] Pièce et pièce
+- [ x ] Détecter les collisions
+- [ x ] Pièce et champ de jeu
+- [ x ] Pièce et pièce
 
 - GameController
 - [ x ] Pouvoir se déplacer gauche-droite
-- [ ] Pouvoir se déplacer vers le bas avec une vitesse plus grande
-- [ ] Pouvoir faire une rotation
+- [ x ] Pouvoir se déplacer vers le bas
+- [ x ] Pouvoir faire une rotation
 - 
 - Lignes complétées
-- [ ] Quand une ligne est complétée, elle disparait, et les blocs placés au-dessus chutent d'un rang
-- [ ] Quand une ligne est complétée, le score du joueur augmente
+- [ x ] Quand une ligne est complétée, elle disparait, et les blocs placés au-dessus chutent d'un rang
+- [ x ] Quand une ligne est complétée, le score du joueur augmente
 - [ ] Après x lignes, le niveau augmente et la vitesse aussi et le score aussi
 
 
 - Game State
-- [ ] Start
-- [ ] Playing
-- [ ] Game Over
+- [ x ] Start
+- [ x ] Playing
+- [ x ] Game Over
 
 - Son
 - [ ] Ajouter un son lorsqu'une ligne est complétée
 
 
 Tutoriel(s) que j'ai suivi : 
+
+- https://www.educative.io/courses/game-development-js-tetris
+- 

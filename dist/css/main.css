@@ -10,6 +10,7 @@ html {
 
 body {
   display: flex;
+  background-color: white;
 }
 
 #my-canvas {
@@ -24,6 +25,7 @@ body {
 .tetris .container {
   display: flex;
   flex-direction: column;
+  margin-bottom: 2rem;
 }
 .tetris__data .tetris__score, .tetris__data .tetris__lines, .tetris__data .tetris__level {
   display: inline;
@@ -36,4 +38,15 @@ body {
   padding: 1rem 2rem;
   background-color: aquamarine;
   cursor: pointer;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+.playAgain {
+  opacity: 0;
+}
+
+.playAgain.show {
+  opacity: 1;
 }
